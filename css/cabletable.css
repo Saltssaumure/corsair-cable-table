@@ -1,0 +1,201 @@
+body {
+  margin: 0;
+  background-color: #373737;
+  color: #EEE;
+}
+
+body h1, body h2, body h3, body h4, body h5, body h6, body th, body footer {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body a {
+  color: #EEE;
+}
+
+body h1 {
+  border: double rgba(255, 255, 255, 0.2);
+  background-color: #373737;
+  margin: 0;
+  padding: 25px 0;
+  border-width: 0 0 10px 0;
+  text-align: center;
+}
+
+body footer {
+  border: double rgba(255, 255, 255, 0.2);
+  background-color: #373737;
+  margin: 0;
+  padding: 25px 0;
+  border-width: 10px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.info-wrapper {
+  padding: 30px 20vw;
+}
+
+.info-wrapper h2 {
+  margin-top: 1.5em;
+  margin-bottom: 0;
+  border-bottom: 4px double rgba(255, 255, 255, 0.2);
+}
+
+.info-wrapper h2:first-child {
+  margin-top: 0;
+}
+
+.info-wrapper h2 + ul, .info-wrapper h2 + p {
+  margin-top: 0.5em;
+}
+
+.table-wrapper {
+  padding: 30px 0;
+}
+
+.table-wrapper table {
+  table-layout: fixed;
+  display: block;
+  overflow-x: auto;
+  overflow-y: auto;
+  border-spacing: 0;
+  font-family: sans-serif;
+  color: black;
+}
+
+.table-wrapper table td, .table-wrapper table th {
+  padding: 0.5em;
+  border: 1px solid #373737;
+}
+
+.table-wrapper table th span {
+  display: block;
+  font-size: 0.8em;
+}
+
+.table-wrapper table thead th {
+  background-color: #1C9C95;
+}
+
+.table-wrapper table thead tr:first-child th {
+  border-radius: 1em 1em 0 0;
+  background-color: #1C9C95;
+}
+
+.table-wrapper table thead tr:first-child th:first-child {
+  background-color: transparent;
+}
+
+.table-wrapper table thead tr:nth-child(2) th {
+  background-color: #22bfae;
+}
+
+.table-wrapper table thead tr:nth-child(2) th:first-child {
+  border-radius: 1em 0 0 0;
+  border-right: 2px solid #373737;
+  background-color: #1C9C95;
+  position: relative;
+}
+
+.table-wrapper table thead tr:nth-child(2) th:first-child .model {
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+}
+
+.table-wrapper table thead tr:nth-child(2) th:first-child .connector {
+  position: absolute;
+  left: 0.5em;
+  bottom: 0.5em;
+}
+
+.table-wrapper table thead tr:last-child th {
+  border-bottom: 2px solid #373737;
+}
+
+.table-wrapper table tbody {
+  position: relative;
+}
+
+.table-wrapper table tbody tr:nth-child(odd) td {
+  background-color: #EEE;
+}
+
+.table-wrapper table tbody tr:nth-child(even) td {
+  background-color: #DDD;
+}
+
+.table-wrapper table tbody th {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  border-right: 2px solid #373737;
+  background-color: #22bfae;
+}
+
+.table-wrapper table tbody td {
+  gap: 0.5em;
+}
+
+.table-wrapper table tbody td span::before {
+  display: inline-block;
+  height: 30px;
+  border-radius: calc(30px/2 + 1px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+  line-height: 30px;
+  padding: 0 0.5em;
+  color: white;
+  border: 2px solid #373737;
+}
+
+.table-wrapper table tbody td .three::before {
+  content: "Type 3";
+  background-color: #e44d4d;
+}
+
+.table-wrapper table tbody td .four::before {
+  content: "Type 4";
+  background-color: #d59424;
+}
+
+.table-wrapper table tbody td .sfx::before {
+  content: "Type 4 SFX*";
+  background-color: #c0c039;
+}
+
+.table-wrapper table tbody td .axonly::before {
+  content: "AX 24-pin";
+  background-color: #48bb83;
+}
+
+.table-wrapper table tbody td .axgoldany::before {
+  content: "AX Gold 8-pin";
+  background-color: #4690ad;
+}
+
+.table-wrapper table tbody td .axnot1200::before {
+  content: "Not AX1200";
+  background-color: #4242c0;
+}
+
+.table-wrapper table tbody td .ax1200only::before {
+  content: "AX1200 Only";
+  background-color: #bc3dbc;
+}
+
+.table-wrapper table tbody td .fixed::before {
+  content: "Fixed";
+  background-color: #373737;
+}
+
+.table-wrapper table tbody td .hxold::before {
+  content: "Original HX";
+  background-color: #919191;
+}
+/*# sourceMappingURL=cabletable.css.map */

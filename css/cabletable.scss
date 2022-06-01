@@ -1,0 +1,198 @@
+$heading: #1C9C95;
+$subheading: adjust-color($heading, $hue: -3, $lightness: 8%);
+$row1: #EEE;
+$row2: #DDD;
+$text: #EEE;
+$bg: rgb(55, 55, 55);
+
+body {
+    margin: 0;
+    background-color: $bg;
+    color: $text;
+
+    h1, h2, h3, h4, h5, h6, th, footer {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    a {
+        color: $text;
+    }
+
+    @mixin framing {
+        border: double rgba(255,255,255,0.2);
+        background-color: $bg;
+        margin: 0;
+        padding: 25px 0;
+    }
+
+    $borderWidth: 10px;
+
+    h1 {
+        @include framing;
+        border-width: 0 0 $borderWidth 0;
+        text-align: center;
+    }
+
+    footer {
+        @include framing;
+        border-width: $borderWidth 0 0 0;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+.info-wrapper {
+    padding: 30px 20vw;
+
+    h2 {
+        margin-top: 1.5em;
+        margin-bottom: 0;
+        border-bottom: 4px double rgba(255,255,255,0.2);
+    }
+
+    h2:first-child {
+        margin-top: 0;
+    }
+
+    h2+ul, h2+p {
+        margin-top: 0.5em;
+    }
+}
+
+.table-wrapper {
+    padding: 30px 0;
+
+    table {
+        table-layout: fixed;
+        display: block;
+        overflow-x: auto;
+        overflow-y: auto;
+        border-spacing: 0;
+        font-family: sans-serif;
+        color: black;
+
+        td, th {
+            padding: 0.5em;
+            border: 1px solid $bg;
+        }
+
+        th {
+            span {
+                display: block;
+                font-size: 0.8em;
+            }
+        }
+
+        thead {
+
+            th {
+                background-color: $heading;
+            }
+
+            tr:first-child {
+
+                th {
+                    border-radius: 1em 1em 0 0;
+                    background-color: $heading;
+                }
+
+                th:first-child {
+                    background-color: transparent;
+                }
+            }
+
+            tr:nth-child(2) {
+
+                th {
+                    background-color: $subheading;
+                }
+
+                th:first-child {
+                    border-radius: 1em 0 0 0;
+                    border-right: 2px solid $bg;
+                    background-color: $heading;
+                    position: relative;
+
+                    .model {
+                        position: absolute;
+                        right: 0.5em;
+                        top: 0.5em;
+                    }
+
+                    .connector {
+                        position: absolute;
+                        left: 0.5em;
+                        bottom: 0.5em;
+                    }
+                }
+            }
+            
+            tr:last-child th {
+                border-bottom: 2px solid $bg;
+            }
+
+        }
+
+        tbody {
+            position: relative;
+
+            tr:nth-child(odd) td {
+                background-color: $row1;
+            }
+
+            tr:nth-child(even) td {
+                background-color: $row2;
+            }
+
+            th {
+                position: sticky;
+                left: 0;
+                border-right: 2px solid $bg;
+                background-color: $subheading;
+            }
+
+            td {
+                gap: 0.5em;
+        
+                span::before {
+                    $size: 30px;
+                    display: inline-block;
+                    height: $size;
+                    border-radius: calc(#{$size}/2 + 1px);
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: clip;
+                    line-height: $size;
+                    padding: 0 0.5em;
+                    color: white;
+                    border: 2px solid $bg;
+                }
+
+                @mixin bubble($content, $bgColor) {
+                    content: $content;
+                    background-color: $bgColor;
+                }
+
+                .three::before { @include bubble("Type 3", rgb(228, 77, 77)); }
+                
+                .four::before { @include bubble("Type 4", rgb(213, 148, 36)); }
+
+                .sfx::before { @include bubble("Type 4 SFX*", rgb(192, 192, 57)); }
+
+                .axonly::before { @include bubble("AX 24-pin", rgb(72, 187, 131)); }
+
+                .axgoldany::before { @include bubble("AX Gold 8-pin", rgb(70, 144, 173)); }
+
+                .axnot1200::before { @include bubble("Not AX1200", rgb(66, 66, 192)); }
+
+                .ax1200only::before { @include bubble("AX1200 Only", rgb(188, 61, 188)); }
+
+                .fixed::before { @include bubble("Fixed", rgb(55, 55, 55)); }
+
+                .hxold::before { @include bubble("Original HX", rgb(145, 145, 145)); }
+            }
+        }
+    }
+}
+
